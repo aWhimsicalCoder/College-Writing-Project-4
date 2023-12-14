@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(60, 60, 60);
+    color: white;
+    font-family: Arial, sans-serif; /* Or any other sans-serif font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100vh; /* Full viewport height */
+}
+
+.sources-section {
+    background-color: rgb(60, 60, 60);
+    color: white;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.sources-section h2,
+.sources-section h3 {
+    margin-bottom: 1rem;
+}
+
+.sources-section h3 {
+    font-size: 1.2em;
+    color: #ccc;
+    margin-top: 2rem;
+}
+
+.sources-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sources-section ul li {
+    margin: 0.5rem 0;
+}
+
+.sources-section ul li a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sources-section ul li a:hover {
+    color: #0096ff;
+    text-decoration: underline;
+}

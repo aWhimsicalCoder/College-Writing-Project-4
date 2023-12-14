@@ -1,0 +1,291 @@
+/* Mobile styles */
+@media only screen and (max-width: 600px) {
+    .read-more-content.expanded {
+        max-height: none; /* Remove max-height restriction */
+    }
+
+    /* Adjust the padding-top for video and image containers to maintain aspect ratio */
+    .video-container, .image-container {
+        padding-top: 35%; /* Adjusted for a 4:3 aspect ratio, change as needed */
+        
+    }
+
+    /* Additional mobile-specific styles can go here */
+}
+
+
+/* Reset Styles */
+html {
+    background-color: rgb(60, 60, 60);
+}
+
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background-color: rgb(60, 60, 60);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20; /* Ensure it's above other content */
+}
+
+.headline {
+    font-size: 32px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.byline, .date {
+    font-size: 16px;
+    font-style: italic;
+    font-family: "Open Sans", sans-serif;
+}
+
+.date {
+    font-size: 14px;
+}
+
+/* Article Styles */
+.article {
+    flex-grow: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-y: auto;
+    color: #F5F5F5;
+    position: relative;
+    z-index: 1;
+    font-family: "Open Sans", sans-serif;
+    margin-top: 8px;
+}
+
+.featured-image-container {
+    margin: 10px; /* Adds some space around the container */
+}
+
+.featured-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.caption {
+    color: #979797; /* Caption text color */
+    font-size: 0.9em; /* Smaller font size for captions */
+    margin-top: 8px; /* Space between image and caption */
+}
+
+/* Read More Link/Button Styles */
+.read-more-link, .read-more-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-link:hover, .read-more-button:hover {
+    background-color: #555;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: rgb(60, 60, 60);
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+    flex-direction: column;
+    line-height: 1.5em;
+}
+
+/* Typography */
+h2, h3 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+    font-size: 1.5em;
+}
+
+.parallax p {
+    margin-bottom: 20px;
+    font-size: 1.125em;
+    line-height: 1.5;
+}
+
+/* Text and Link Styling */
+a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.read-more-content {
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    max-height: 0;
+    opacity: 0;
+}
+
+.read-more-content.expanded {
+    max-height: none; /* Adjust as needed */
+    opacity: 1;
+}
+
+.read-more-button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #333; /* Default background color */
+    color: #007bff; /* Default text color */
+    /* Other existing styles... */
+}
+
+.read-more-button:hover {
+    background-color: #555; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    accent-color: #c0c0c0 ; /* Change text color if desired */
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("images/Parallax\ 3.webp");
+  
+    /* Set a specific height */
+    top: 0; /* Start at the top of the page */
+    left: 0;
+    right: 0;
+    min-height: 100vh; /* Adjust if necessary */
+  
+    /* Create the parallax scrolling effect */
+ 
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; /* If you want the parallax to be part of the flow */
+    overflow: hidden; /* This will ensure nothing spills out */
+  }
+  
+  .parallax::before {
+    content: '';
+    position: absolute;
+    top: var(--header-height, 70px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1; /* Ensures the overlay is above the background image */
+  }
+
+/* Initial state of the elements */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* State of the elements when they are in the viewport */
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.key-term {
+    cursor: pointer;
+    border-bottom: 2px dashed black;
+    color: whitesmoke;
+    position: relative; /* Add this line */
+    font-style: italic; /* Or makes the term italic */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Adjust color and blur radius as needed */
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white; /* Ensure text is visible */
+    border: 1px solid #ddd;
+    padding: 5px;
+    z-index: 100;
+    left: 0; /* Align to the left of the key-term */
+    top: -100%; /* Adjust as needed */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    white-space: normal; /* Allow text wrapping */
+    width: 30vw; /* 50% of the viewport width */
+    max-width: 300px; /* Maximum width */
+    font-style: normal; /* Resets italic */
+    text-shadow: none; /* Removes text shadow */
+    border-radius: 10px;
+}
+
+
+.tooltip.active {
+    display: block;
+}
+
+/* Optional: Add more styles for positioning and animations */
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 20px 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image-container {
+    position: relative;
+    width: 100%; /* Use 100% to make it responsive, or set a fixed width */
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
+    overflow: hidden; /* Ensures nothing spills out of the container */
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will cover the area, cropping the image if necessary */
+}
